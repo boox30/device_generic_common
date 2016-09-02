@@ -17,47 +17,50 @@
 # Common packages for Android-x86 platform.
 
 PRODUCT_PACKAGES := \
-    BasicSmsReceiver \
-    Development \
-    Galaxy4 \
-    GlobalTime \
-    HoloSpiralWallpaper \
-    Launcher3 \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    MagicSmokeWallpapers \
-    NotePad \
-    PhaseBeam \
-    PinyinIME \
-    Provision \
-    RSSReader \
-    VisualizationWallpapers \
     camera.x86 \
-    chat \
     com.android.future.usb.accessory \
     drmserver \
-    eject \
     gps.default \
     gps.huawei \
     hwcomposer.x86 \
-    icu.dat \
     io_switch \
     libGLES_android \
     libhuaweigeneric-ril \
     lights.default \
-    make_ext4fs \
-    parted \
     power.x86 \
     powerbtnd \
-    scp \
     sensors.hsb \
-    sftp \
-    ssh \
-    sshd \
-    su \
     tablet-mode \
     v86d \
     wacom-input \
+
+#    Launcher3 \
+#    BasicSmsReceiver \
+#    Development \
+#    chat \
+#    icu.dat \
+#    eject \
+    
+#    GlobalTime \
+#    NotePad \
+#    PhaseBeam \
+#    PinyinIME \
+#    Provision \
+
+#    VisualizationWallpapers \
+#    RSSReader \
+#    Galaxy4 \
+#    make_ext4fs \
+#    parted \
+#    HoloSpiralWallpaper \
+#    LiveWallpapers \
+#    LiveWallpapersPicker \
+#    MagicSmokeWallpapers \
+#    scp \
+#    sftp \
+#    ssh \
+#    sshd \
+#    su \
 
 PRODUCT_PACKAGES += \
     libwpa_client \
@@ -65,20 +68,20 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf \
 
-PRODUCT_PACKAGES += \
-    badblocks \
-    e2fsck \
-    fsck.exfat \
-    mke2fs \
-    mkfs.exfat \
-    mkntfs \
-    mount.exfat \
-    ntfs-3g \
-    ntfsfix \
-    resize2fs \
-    tune2fs \
+#PRODUCT_PACKAGES += \
+#    badblocks \
+#    e2fsck \
+#    fsck.exfat \
+#    mke2fs \
+#    mkfs.exfat \
+#    mkntfs \
+#    mount.exfat \
+#    ntfs-3g \
+#    ntfsfix \
+#    resize2fs \
+#    tune2fs \
 
 # Third party apps
-PRODUCT_PACKAGES += \
-    CMFileManager \
-    Eleven \
+# PRODUCT_PACKAGES += \
+#    CMFileManager \
+#    Eleven \

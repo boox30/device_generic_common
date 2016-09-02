@@ -28,7 +28,8 @@ $(call inherit-product,$(LOCAL_PATH)/packages.mk)
 $(call inherit-product,$(SRC_TARGET_DIR)/product/locales_full.mk)
 
 # Get everything else from the parent package
-$(call inherit-product,$(SRC_TARGET_DIR)/product/generic.mk)
+#$(call inherit-product,$(SRC_TARGET_DIR)/product/generic.mk)
+$(call inherit-product,$(SRC_TARGET_DIR)/product/full.mk)
 
 # Get some sounds
-$(call inherit-product-if-exists,frameworks/base/data/sounds/AudioPackage6.mk)
+# $(call inherit-product-if-exists,frameworks/base/data/sounds/AudioPackage6.mk)
