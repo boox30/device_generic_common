@@ -26,6 +26,8 @@ static NativeBridgeCallbacks *get_callbacks()
 {
     static NativeBridgeCallbacks *callbacks = nullptr;
 
+    ALOGV("enter native_bridge2: get_callbacks...");
+
     if (!callbacks) {
         const char *libnb = "/system/"
 #ifdef __LP64__
@@ -93,16 +95,20 @@ static const struct NativeBridgeRuntimeValues *native_bridge2_getAppEnv(const ch
 
 static bool native_bridge2_is_compatible_compatible_with(uint32_t version)
 {
+    ALOGV("enter native_bridge2_is_compatible_compatible_with %s", version);
+
     // For testing, allow 1 and 2, but disallow 3+.
     return version <= 2;
 }
 
+#if 0 // To compile for 5.1.1
 static NativeBridgeSignalHandlerFn native_bridge2_get_signal_handler(int signal)
 {
     ALOGV("enter native_bridge2_getAppEnv %d", signal);
     NativeBridgeCallbacks *cb = get_callbacks();
     return cb ? cb->getSignalHandler(signal) : nullptr;
 }
+#endif
 
 static void __attribute__ ((destructor)) on_dlclose()
 {
@@ -115,14 +121,16 @@ static void __attribute__ ((destructor)) on_dlclose()
 extern "C" {
 
 NativeBridgeCallbacks NativeBridgeItf = {
-    version: 2,
+    version: 1,
     initialize: &native_bridge2_initialize,
     loadLibrary: &native_bridge2_loadLibrary,
     getTrampoline: &native_bridge2_getTrampoline,
     isSupported: &native_bridge2_isSupported,
     getAppEnv: &native_bridge2_getAppEnv,
+#if 0 // To compile for 5.1.1
     isCompatibleWith: &native_bridge2_is_compatible_compatible_with,
     getSignalHandler: &native_bridge2_get_signal_handler,
+#endif
 };
 
 } // extern "C"
